@@ -1,27 +1,28 @@
+//Talia yarin bar zohar Id: 318257060  
+//Sagi stav Id: 316584622
 package assig3_1;
-
 import java.util.Random;
 
 public class GamePlay {
 
 	private boolean coin_available_;
 	private int rounds_counter_;
-
+	
+//Default constructor
 	public GamePlay() {
 		this.coin_available_ = true;
 		this.rounds_counter_ = 0;
 	}
 
-//makeCoinAvail function
+//MakeCoinAvail function
 	public synchronized void makeCoinAvail(boolean val) {
-		// synchronized(gamer1)
 		coin_available_ = val;
 		if (coin_available_ == true)
+		//We will wake up all Threads in the wait () state
 			notifyAll();
-
 	}
 
-//filpCoin function
+//FilpCoin function
 	public synchronized int filpCoin() {
 		try {
 			while (!this.coin_available_) {
@@ -40,9 +41,8 @@ public class GamePlay {
 		return rand;
 	}
 
-//getNumOfRounds function 
+//GetNumOfRounds function 
 	public synchronized int getNumOfRounds() {
 		return rounds_counter_;
 	}
-
 }

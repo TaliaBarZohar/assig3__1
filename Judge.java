@@ -1,16 +1,18 @@
+//Talia yarin bar zohar Id: 318257060  
+//Sagi stav Id: 316584622
 package assig3_1;
 
 public class Judge extends Thread {
 	GamePlay gamePlay;
 
-	// Constructor
+	// Parameter Constructor
 	public Judge(GamePlay gamePlay) {
 		this.gamePlay = gamePlay;
 	}
 
-	// gameJudge function
+	// GameJudge function
 	public void run() {
-		
+
 		try {
 			while (!Thread.interrupted()) {
 				gamePlay.makeCoinAvail(false);
@@ -22,5 +24,4 @@ public class Judge extends Thread {
 			return;
 		}
 	}
-
 }

@@ -1,8 +1,10 @@
+//Talia yarin bar zohar Id: 318257060  
+//Sagi stav Id: 316584622
 package assig3_1;
 
 public class Gamer extends Thread {
 
-	// Variables
+	
 	private int goodFlipsCounter;
 	GamePlay gamePlay;
 
